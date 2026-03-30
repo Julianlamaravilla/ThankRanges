@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -7,30 +8,36 @@ public class Main {
 
         try {
 
-            // initialized an object Scanner class
-            Scanner s = new Scanner(System.in);
+            // Give the String variable with JOptionPane
+            Double tank = Double.parseDouble(JOptionPane.showInputDialog(null ,"Enter Ranges Tank : " ));
 
-            // Give the String variable
-            System.out.println("Enter Ranges Tank : ");
-            Double tank = s.nextDouble();
 
+            // conditional flow
             if (tank >= 60 && tank < 70){
-                System.out.println("Almost full");
+                JOptionPane.showMessageDialog(null , "Almost full");
+
             } else if (tank == 70){
-                System.out.println("Tank full" );
+                JOptionPane.showMessageDialog(null ,"Tank full");
+
             } else if (tank >= 40 && tank < 60) {
-                System.out.println("Thank 1/4");
+                JOptionPane.showMessageDialog(null, "Thank 1/4");
+
             } else if ( tank >= 35 && tank < 40) {
-                System.out.println("Half a tank");
+                JOptionPane.showMessageDialog(null ,"Half a tank" );
+
             } else if ( tank >= 20 && tank < 35) {
-                System.out.println("sufficient");
+                JOptionPane.showMessageDialog(null ,"sufficient" );
+
             } else if (tank >= 1 && tank < 20){
-                System.out.println("Insufficient");
+                JOptionPane.showMessageDialog(null, "Insufficient");
+
             } else {
-                System.out.println("Out of the range");
+                JOptionPane.showMessageDialog(null, "Out of the range");
+                main(args);
+                System.exit(0);
             }
         } catch (Exception e) {
-            System.out.println("Error : " + e + ", please enter right values");
+            JOptionPane.showMessageDialog(null , "Error : " + e + ", please enter right values");
             main(args);
             System.exit(0);
         }
